@@ -1,3 +1,5 @@
+// This code is in large part from a tutorial on Service Workers from Traversy Media
+
 const cacheName = 'v1';
 const cacheAssets = [
 	'index.html',
