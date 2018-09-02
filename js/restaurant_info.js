@@ -30,30 +30,11 @@ initMap = () => {
         id: 'mapbox.streets'    
       }).addTo(newMap);
 
-      // take map out of tab order
-      document.getElementById("map").tabIndex = -1;
-
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
   });
 }  
- 
-/* window.initMap = () => {
-  fetchRestaurantFromURL((error, restaurant) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      self.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: restaurant.latlng,
-        scrollwheel: false
-      });
-      fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
-    }
-  });
-} */
 
 /**
  * Get current restaurant from page URL.
@@ -89,7 +70,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.src = DBHelper.imageUrlForRestaurantDetail(restaurant);
   image.alt = restaurant.name + " Restaurant Image";
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -163,7 +144,14 @@ createReviewHTML = (review) => {
   li.appendChild(date);
 
   const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
+
+  let starRating = "Rating: ";
+  const ratingNbr = review.rating;
+  console.log(ratingNbr);
+  for (let x = 0; x < ratingNbr; x++) {
+    starRating = starRating + "<i class='fa fa-star'></i>";
+  }
+  rating.innerHTML = starRating;
   li.appendChild(rating);
 
   const comments = document.createElement('p');

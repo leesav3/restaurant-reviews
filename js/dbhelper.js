@@ -13,7 +13,7 @@ class DBHelper {
     return 'https://leesav3.github.io/restaurant-reviews/data/restaurants.json';
 
     // !!! UNCOMMENT LINE BELOW TO RUN ON YOUR LOCAL MACHINE
-    // return `http://localhost:${port}/data/restaurants.json`;
+    //return `http://localhost:${port}/data/restaurants.json`;
   }
 
   /**
@@ -158,6 +158,13 @@ class DBHelper {
   }
 
   /**
+   * Restaurant image URL for detail page.
+   */
+  static imageUrlForRestaurantDetail(restaurant) {
+    return (`/img/${restaurant.detail_photograph}`);
+  }
+
+  /**
    * Map marker for a restaurant.
    */
    static mapMarkerForRestaurant(restaurant, map) {
@@ -171,16 +178,5 @@ class DBHelper {
 
     return marker;
   } 
-  /* static mapMarkerForRestaurant(restaurant, map) {
-    const marker = new google.maps.Marker({
-      position: restaurant.latlng,
-      title: restaurant.name,
-      url: DBHelper.urlForRestaurant(restaurant),
-      map: map,
-      animation: google.maps.Animation.DROP}
-    );
-    return marker;
-  } */
-
 }
 
