@@ -1,7 +1,7 @@
 const cacheName = 'v1';
 const cacheAssets = [
-	'index.html',
-	'restaurant.html',
+	'/index.html',
+	'/restaurant.html',
 	'/css/styles.css',
 	'/data/restaurants.json',
 	'/img/1-banner.jpg',
