@@ -393,7 +393,10 @@ nav h1 a {
 
 /* ====================== Media Queries ====================== */
 
+
+
 /* Mobile */
+
 @media screen and (max-width: 549px) {
   body {
     max-width: 100%;
@@ -402,6 +405,7 @@ nav h1 a {
 }
 
 /* Medium & iPad */
+
 @media screen and (min-width: 550px) and (max-width: 768px) {
   body {
     max-width: 100%;
@@ -410,6 +414,7 @@ nav h1 a {
 }
 
 /* Large Screens */
+
 @media screen and (min-width: 769px) {
   body {
      max-width: 80%;    
