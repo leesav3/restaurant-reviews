@@ -10,10 +10,9 @@ class DBHelper {
   static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
 
-    return 'https://leesav3.github.io/restaurant-reviews/data/restaurants.json';
+    //return 'https://leesav3.github.io/restaurant-reviews/data/restaurants.json';
 
-    // !!! UNCOMMENT LINE BELOW TO RUN ON YOUR LOCAL MACHINE
-    //return `http://localhost:${port}/data/restaurants.json`;
+    return `http://localhost:${port}/data/restaurants.json`;
   }
 
   /**
